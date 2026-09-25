@@ -72,8 +72,9 @@ export const processNote = async (
   const claudeApiClient = new Anthropic({ apiKey });
 
   const response = await claudeApiClient.messages.create({
-    model: "claude-sonnet-4-6",
+    model: "claude-sonnet-5",
     max_tokens: 16384,
+    output_config: { effort: "low" },
     system: systemPromptMap[req.action],
     messages: [{ role: "user", content: req.payload }],
   });
