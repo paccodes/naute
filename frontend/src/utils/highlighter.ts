@@ -6,6 +6,8 @@ import {
   type HighlighterCore,
 } from "shiki";
 
+import { COLOR_THEMES } from "../theme";
+
 let highlighterPromise: Promise<HighlighterCore> | null = null;
 
 export const createMarked = (
@@ -34,10 +36,9 @@ export const getHighlighter = (): Promise<HighlighterCore> => {
     highlighterPromise = createHighlighterCore({
       engine: createJavaScriptRegexEngine(),
       langs: [],
-      themes: [
-        import("shiki/themes/kanagawa-wave.mjs"),
-        import("shiki/themes/kanagawa-lotus.mjs"),
-      ],
+      themes: Object.values(COLOR_THEMES).flatMap((colorTheme) =>
+        Object.values(colorTheme.shiki).map((shikiTheme) => shikiTheme.load),
+      ),
     });
   }
 

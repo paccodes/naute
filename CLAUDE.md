@@ -68,7 +68,7 @@ No test framework is configured. There are no test files in the codebase.
 - `hooks/` — TanStack Query hooks (`useNotes`, `useNote`, `useSaveNote`, `useDeleteNote`, `useAiNote`), editor/markdown helpers (`useNoteEditor`, `useMarkdown`), the API client hook (`useApiClient`), and shared `query-keys.ts`
 - `components/` — Layout, Navbar, Sidebar, NoteCard, NoteEditor, NoteWorkspace, AiNoteDialog, Dropdown
 - `pages/` — LandingPage, CallbackPage, NoteListPage, NoteViewPage, NoteEditorPage (split-pane: CodeMirror 6 editor + marked/Shiki/DOMPurify preview); each page has a co-located `use-*-page.ts` hook that owns its state and side effects
-- `theme/` — Kanagawa theme with light/dark variants and CSS variables
+- `theme/` — Color theme registry (`COLOR_THEMES` in `color-themes.ts`, currently only Kanagawa) with light/dark variants; each color theme combines a CSS variable palette (`palettes/*.css`, scoped by `data-color-theme` on `<html>`), a CodeMirror theme (`codemirror/`), and a Shiki theme (`shiki/`). `ThemeContext` exposes the active `colorTheme` alongside the light/dark `theme`
 - `utils/` — Shared helpers (`cn`, `getRelativeTimeString`, Shiki/marked highlighter setup)
 - `types.ts` — Frontend-only types (`Tag`, `SortField`, `SortOrder`)
 - `env.ts` — Centralized type-safe access to all `VITE_*` environment variables

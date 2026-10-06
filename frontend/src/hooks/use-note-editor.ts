@@ -2,7 +2,6 @@ import { markdown as cmMarkdown } from "@codemirror/lang-markdown";
 import { languages } from "@codemirror/language-data";
 import { Compartment } from "@codemirror/state";
 import { basicSetup, EditorView } from "codemirror";
-import { kanagawaLotus, kanagawaWave } from "kanagawa-codemirror-theme/src";
 import { type RefObject, useContext, useEffect, useRef, useState } from "react";
 
 import { ThemeContext } from "../theme";
@@ -26,7 +25,7 @@ export const useNoteEditor = ({
   initialContent,
   onContentChange,
 }: Params): ReturnValue => {
-  const { theme } = useContext(ThemeContext);
+  const { colorTheme, theme } = useContext(ThemeContext);
 
   const [content, setContent] = useState<string>(initialContent);
 
@@ -34,6 +33,8 @@ export const useNoteEditor = ({
   const viewRef = useRef<EditorView | null>(null);
   const contentRef = useRef<string>(content);
   const onContentChangeRef = useRef<typeof onContentChange>(onContentChange);
+
+  const codeMirrorTheme = colorTheme.codeMirror[theme];
 
   contentRef.current = content;
   onContentChangeRef.current = onContentChange;
@@ -58,7 +59,7 @@ export const useNoteEditor = ({
             onContentChangeRef.current();
           }
         }),
-        themeCompartment.of(theme === "dark" ? kanagawaWave : kanagawaLotus),
+        themeCompartment.of(codeMirrorTheme),
       ],
       parent: editorRef.current,
     });
@@ -69,7 +70,7 @@ export const useNoteEditor = ({
       view.destroy();
       viewRef.current = null;
     };
-  }, [theme]);
+  }, [codeMirrorTheme]);
 
   useEffect(() => {
     if (!viewRef.current) {
@@ -77,11 +78,9 @@ export const useNoteEditor = ({
     }
 
     viewRef.current.dispatch({
-      effects: themeCompartment.reconfigure(
-        theme === "dark" ? kanagawaWave : kanagawaLotus,
-      ),
+      effects: themeCompartment.reconfigure(codeMirrorTheme),
     });
-  }, [theme]);
+  }, [codeMirrorTheme]);
 
   useEffect(() => {
     setContent(initialContent);

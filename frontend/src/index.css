@@ -4,6 +4,7 @@
 @import "@fontsource/roboto/700.css";
 @import "@fontsource/jetbrains-mono/400.css";
 @import "tailwindcss";
+@import "./theme/palettes/kanagawa.css";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -12,92 +13,6 @@
   font-family: "Material Icons Outlined";
   src: url("@fontsource/material-icons-outlined/files/material-icons-outlined-latin-400-normal.woff2")
     format("woff2");
-}
-
-/* ─────────────────────────────────────────────────────
-   Kanagawa Theme — Lotus (light) / Wave (dark)
-   ───────────────────────────────────────────────────── */
-
-:root {
-  /* Backgrounds */
-  --base: #e5ddb0;
-  --surface: #dcd5ac;
-  --panel: #f2ecbc;
-  --float: #d5cea3;
-  --highlight: #e4d794;
-
-  /* Foregrounds */
-  --ink: #545464;
-  --ink-dim: #43436c;
-  --ink-muted: #8a8980;
-  --ink-faint: #a09cac;
-
-  /* Borders */
-  --edge: #d5cea3;
-
-  /* Accent */
-  --accent: #4d699b;
-  --accent-hover: #405880;
-  --accent-fg: #f2ecbc;
-
-  /* Tags */
-  --tag: #c7d7e0;
-  --tag-fg: #4d699b;
-
-  /* Active/Selected */
-  --active: #4d699b;
-  --active-fg: #f2ecbc;
-
-  /* Danger */
-  --danger: #c84053;
-  --danger-hover: #b53847;
-  --danger-dim: #e8cfc5;
-  --danger-fg: #f2ecbc;
-
-  /* Shadows */
-  --shadow-color: rgb(84 84 100 / 8%);
-  --shadow-color-heavy: rgb(84 84 100 / 16%);
-}
-
-.dark {
-  /* Backgrounds */
-  --base: #1f1f28;
-  --surface: #181820;
-  --panel: #2a2a37;
-  --float: #16161d;
-  --highlight: #363646;
-
-  /* Foregrounds */
-  --ink: #dcd7ba;
-  --ink-dim: #c8c093;
-  --ink-muted: #727169;
-  --ink-faint: #54546d;
-
-  /* Borders */
-  --edge: #363646;
-
-  /* Accent */
-  --accent: #7e9cd8;
-  --accent-hover: #8baae0;
-  --accent-fg: #16161d;
-
-  /* Tags */
-  --tag: #223249;
-  --tag-fg: #9cabca;
-
-  /* Active/Selected */
-  --active: #7e9cd8;
-  --active-fg: #16161d;
-
-  /* Danger */
-  --danger: #e46876;
-  --danger-hover: #ff5d62;
-  --danger-dim: #43242b;
-  --danger-fg: #dcd7ba;
-
-  /* Shadows */
-  --shadow-color: rgb(0 0 0 / 25%);
-  --shadow-color-heavy: rgb(0 0 0 / 45%);
 }
 
 @theme {
@@ -193,7 +108,7 @@ body {
 }
 
 /* ─────────────────────────────────────────────────────
-   CodeMirror — Kanagawa overrides
+   CodeMirror
    ───────────────────────────────────────────────────── */
 
 .cm-editor {

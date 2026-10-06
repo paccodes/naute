@@ -6,16 +6,13 @@ import type { HighlighterCore } from "shiki";
 import { ThemeContext } from "../theme";
 import { createMarked, getHighlighter, loadLanguages } from "../utils";
 
-const SHIKI_THEMES = {
-  dark: "kanagawa-wave",
-  light: "kanagawa-lotus",
-} as const;
-
 export const useMarkdown = (content: string): string => {
-  const { theme } = useContext(ThemeContext);
+  const { colorTheme, theme } = useContext(ThemeContext);
 
   const [highlighter, setHighlighter] = useState<HighlighterCore | null>(null);
   const [loadedLanguages, setLoadedLanguages] = useState<string[]>([]);
+
+  const shikiThemeName = colorTheme.shiki[theme].name;
 
   useEffect(() => {
     let cancelled = false;
@@ -57,11 +54,11 @@ export const useMarkdown = (content: string): string => {
       return "";
     }
 
-    const marked = createMarked(highlighter, SHIKI_THEMES[theme]);
+    const marked = createMarked(highlighter, shikiThemeName);
 
     return DOMPurify.sanitize(marked.parse(content) as string);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [content, highlighter, loadedLanguages, theme]);
+  }, [content, highlighter, loadedLanguages, shikiThemeName]);
 
   return html;
 };
