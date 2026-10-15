@@ -7,7 +7,7 @@ export const LandingPage = () => {
   const { login } = useContext(AuthContext);
 
   return (
-    <div className="bg-base relative flex h-screen flex-col items-center justify-center gap-8">
+    <div className="bg-canvas relative flex h-screen flex-col items-center justify-center gap-8">
       <img src="/icon.svg" alt="" className="size-240 absolute opacity-10" />
       <h1 className="text-ink relative text-4xl font-bold">Naute</h1>
       <p className="text-ink-muted relative text-lg">

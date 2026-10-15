@@ -72,12 +72,12 @@ export const NoteWorkspace = ({
   };
 
   return (
-    <div className="bg-base relative flex flex-1 flex-col overflow-hidden">
+    <div className="bg-canvas relative flex flex-1 flex-col overflow-hidden">
       {isEditMode && isLoading && (
         <div
           className={cn(
             "absolute inset-0 z-10 flex items-center justify-center",
-            "bg-base",
+            "bg-canvas",
           )}
         >
           <div

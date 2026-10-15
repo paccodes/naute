@@ -17,7 +17,7 @@
 }
 
 @theme {
-  --color-base: var(--base);
+  --color-canvas: var(--base);
   --color-surface: var(--surface);
   --color-panel: var(--panel);
   --color-float: var(--float);

@@ -46,7 +46,7 @@ export const Layout = ({
   };
 
   return (
-    <div className="bg-base flex flex-1 flex-col overflow-hidden md:flex-row">
+    <div className="bg-canvas flex flex-1 flex-col overflow-hidden md:flex-row">
       <div
         className={cn(
           "border-edge bg-surface overflow-y-auto border-b md:w-1/3 md:border-b-0 md:border-r",

@@ -10,7 +10,7 @@ export const AuthGuard = ({ children }: PropsWithChildren) => {
 
   if (isLoading) {
     return (
-      <div className="bg-base flex h-screen items-center justify-center">
+      <div className="bg-canvas flex h-screen items-center justify-center">
         <div
           className={cn(
             "size-8 animate-spin rounded-full",

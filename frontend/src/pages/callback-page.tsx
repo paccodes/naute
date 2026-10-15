@@ -7,7 +7,7 @@ export const CallbackPage = () => {
 
   if (error) {
     return (
-      <div className="bg-base flex h-screen items-center justify-center">
+      <div className="bg-canvas flex h-screen items-center justify-center">
         <div className="text-center">
           <p className="text-danger">Authentication failed: {error}</p>
           <button
@@ -25,7 +25,7 @@ export const CallbackPage = () => {
   }
 
   return (
-    <div className="bg-base flex h-screen items-center justify-center">
+    <div className="bg-canvas flex h-screen items-center justify-center">
       <p className="text-ink-muted">Signing in...</p>
     </div>
   );
