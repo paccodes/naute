@@ -6,7 +6,7 @@ import { createApiClient, type ApiClient } from "../services";
 export const useApiClient = (): ApiClient => {
   const { getAccessToken } = useContext(AuthContext);
 
-  const getTokenRef = useRef(getAccessToken);
+  const getTokenRef = useRef<() => Promise<string | null>>(getAccessToken);
 
   getTokenRef.current = getAccessToken;
 
