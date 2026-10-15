@@ -1,0 +1,81 @@
+:root[data-color-theme="gruvbox"] {
+  /* Backgrounds */
+  --base: #fbf1c7;
+  --surface: #f2e5bc;
+  --panel: #f9f5d7;
+  --float: #ebdbb2;
+  --highlight: #d5c4a1;
+
+  /* Foregrounds */
+  --ink: #3c3836;
+  --ink-dim: #504945;
+  --ink-muted: #7c6f64;
+  --ink-faint: #a89984;
+
+  /* Borders */
+  --edge: #d5c4a1;
+
+  /* Accent */
+  --accent: #076678;
+  --accent-hover: #458588;
+  --accent-fg: #fbf1c7;
+
+  /* Tags */
+  --tag: #ebdbb2;
+  --tag-fg: #076678;
+
+  /* Active/Selected */
+  --active: #076678;
+  --active-fg: #fbf1c7;
+
+  /* Danger */
+  --danger: #9d0006;
+  --danger-hover: #cc241d;
+  --danger-dim: #f4d0c0;
+  --danger-fg: #fbf1c7;
+
+  /* Shadows */
+  --shadow-color: rgb(60 56 54 / 8%);
+  --shadow-color-heavy: rgb(60 56 54 / 16%);
+}
+
+:root.dark[data-color-theme="gruvbox"] {
+  /* Backgrounds */
+  --base: #282828;
+  --surface: #1d2021;
+  --panel: #32302f;
+  --float: #1d2021;
+  --highlight: #3c3836;
+
+  /* Foregrounds */
+  --ink: #ebdbb2;
+  --ink-dim: #d5c4a1;
+  --ink-muted: #928374;
+  --ink-faint: #665c54;
+
+  /* Borders */
+  --edge: #3c3836;
+
+  /* Accent */
+  --accent: #83a598;
+  --accent-hover: #458588;
+  --accent-fg: #282828;
+
+  /* Tags */
+  --tag: #3c3836;
+  --tag-fg: #83a598;
+
+  /* Active/Selected */
+  --active: #83a598;
+  --active-fg: #282828;
+
+  /* Danger */
+  --danger: #fb4934;
+  --danger-hover: #cc241d;
+  --danger-dim: #722529;
+  --danger-fg: #ebdbb2;
+
+  /* Shadows */
+  --shadow-color: rgb(0 0 0 / 25%);
+  --shadow-color-heavy: rgb(0 0 0 / 45%);
+}

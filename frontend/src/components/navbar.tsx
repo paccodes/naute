@@ -5,6 +5,8 @@ import { AuthContext } from "../auth";
 import { ThemeContext } from "../theme";
 import { cn } from "../utils";
 
+import { ColorThemeMenu } from "./color-theme-menu";
+
 export const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -36,6 +38,7 @@ export const Navbar = () => {
         Naute
       </Link>
       <div className="flex items-center gap-3">
+        <ColorThemeMenu />
         <button
           onClick={toggleTheme}
           className={cn(

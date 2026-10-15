@@ -3,7 +3,7 @@ import type { ThemeInput } from "shiki";
 
 export type Theme = "light" | "dark";
 
-export type ColorThemeId = "kanagawa";
+export type ColorThemeId = "kanagawa" | "gruvbox";
 
 export interface ShikiTheme {
   name: string;
